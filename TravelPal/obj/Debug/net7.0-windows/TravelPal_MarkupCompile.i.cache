@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\App.xaml
-11407045341
+5-1411877433
 
-5-137405753
+91917228121
 1981871740104
-MainWindow.xaml;
+MainWindow.xaml;Windows\AddTravelWindow.xaml;Windows\RegisterWindow.xaml;Windows\TravelDetails.xaml;Windows\TravelWindow.xaml;
 
 False
 
