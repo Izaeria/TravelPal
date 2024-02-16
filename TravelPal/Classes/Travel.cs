@@ -6,7 +6,41 @@ using System.Threading.Tasks;
 
 namespace TravelPal.Classes
 {
-    internal class Travel
+    public class Travel
     {
+        public string Destination { get; set; }
+        public List<string> Countries { get; set; }
+        public int Travellers { get; set; }
+
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+
+        public int TravelDays { get; set; }
+
+        /*
+        public Country()
+        {
+            Countries = new List<string>();
+        }*/
+
+
     }
+    public class WorkTrip : Travel
+    {
+        public string MeetingDetails { get; set; }
+
+        //TODO meetingDetails
+        //TODO GetInfo();
+    }
+
+    public class Vacation : Travel
+    {
+        public bool AllInclusive { get; set; }
+
+        //TODO GetInfo();
+
+
+
+    }
+
 }

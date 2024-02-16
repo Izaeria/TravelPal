@@ -1,5 +1,5 @@
 ﻿TravelPal
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\App.xaml
 21033334015
 
-10-64746863
+8-1160510667
 1981871740104
 MainWindow.xaml;Windows\RegisterWindow.xaml;
 

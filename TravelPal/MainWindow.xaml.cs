@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TravelPal.Classes;
+using TravelPal.Managers;
+using TravelPal.Windows;
 
 namespace TravelPal
 {
@@ -24,5 +27,22 @@ namespace TravelPal
         {
             InitializeComponent();
         }
+
+        private void SignInBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+           
+                MessageBox.Show("Login unsuccessfull, please try again");
+            
+        }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            Close();
+        }
     }
+
+
 }

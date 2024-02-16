@@ -7,16 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Windows\AddTravelWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Windows\RegisterWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\TravelDetails.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\TravelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,16 +15,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\AddTravelWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Windows\RegisterWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\TravelDetails.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\TravelWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
