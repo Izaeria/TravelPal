@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace TravelPal.Windows
 {
     /// <summary>
-    /// Interaction logic for RegisterWindow.xaml
+    /// Interaction logic for AddTravelWindow.xaml
     /// </summary>
-    public partial class RegisterWindow : Window
+    public partial class AddTravelWindow : Window
     {
-        public RegisterWindow()
+        public AddTravelWindow()
         {
             InitializeComponent();
-        }
-        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
         }
     }
 }

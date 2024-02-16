@@ -12,17 +12,12 @@ namespace TravelPal.Classes
         public List<string> Countries { get; set; }
         public int Travellers { get; set; }
 
+        /*
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-
         public int TravelDays { get; set; }
-
-        /*
-        public Country()
-        {
-            Countries = new List<string>();
-        }*/
-
+        */
+    
 
     }
     public class WorkTrip : Travel

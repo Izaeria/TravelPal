@@ -21,3 +21,9 @@ D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\refint\TravelPa
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\TravelPal.pdb
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\TravelPal.genruntimeconfig.cache
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\ref\TravelPal.dll
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\AddTravelWindow.g.cs
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\TravelDetailsWindow.g.cs
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\TravelsWindow.g.cs
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\AddTravelWindow.baml
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\TravelDetailsWindow.baml
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\TravelsWindow.baml
