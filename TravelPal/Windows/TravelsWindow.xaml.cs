@@ -42,5 +42,12 @@ namespace TravelPal.Windows
                  MessageBox.Show("Your travel has been removed!");
         
         }
+
+        private void signOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }
