@@ -23,6 +23,18 @@ namespace TravelPal.Windows
         {
             InitializeComponent();
         }
-        
+
+        private void saveDetailsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Your travel has been saved!");
+        }
+
+        private void goBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TravelsWindow travelsWindow = new TravelsWindow();
+            travelsWindow.Show();
+            Close();
+        }
+
     }
 }

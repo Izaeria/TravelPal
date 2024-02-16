@@ -45,9 +45,9 @@
         <TextBlock Grid.Column="1" Grid.Row="6" FontSize ="20" Text="Work or Vacation:" Margin="0,0,10,10" HorizontalAlignment="right"    />
         <ComboBox Name="workOrVacation" Grid.Column="2" Grid.Row="6"/>
 
-        <Button x:Name="saveDetailsBtn" Content="Save" Grid.Column="2" Grid.Row="8" FontSize="10" Margin ="85,5" Width="60" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="saveDetailsBtn" Content="Save" Grid.Column="2" Click="saveDetailsBtn_Click" Grid.Row="8" FontSize="10" Margin ="85,5" Width="60" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
 
-        <Button x:Name="saveDetails" Content="Go to your travels" Grid.Column="2" Grid.Row="9" FontSize="10" Margin ="85,5" Width="90" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="goBackBtn" Content="Go back to previous page" Click="goBackBtn_Click" Grid.Column="2" Grid.Row="9" FontSize="10" Margin ="85,5" Width="120" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
 
     </Grid>
 </Window>
