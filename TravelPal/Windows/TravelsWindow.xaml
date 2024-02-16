@@ -35,9 +35,9 @@
         <TextBlock Grid.Column="4" Grid.Row="1" FontSize ="14" Text="Username" Margin="110,0,0,5" HorizontalAlignment="Center" Foreground="#7B68EE" FontWeight="Bold"  />
 
 
-        <Button x:Name="addTravelButton" Content="Add Travel" Grid.Column="2" Grid.Row="7" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
-        <Button x:Name="checkDetailsButton" Content="Details" Grid.Column="2" Grid.Row="8" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
-        <Button x:Name="removetravelsButton" Content="Remove" Grid.Column="2" Grid.Row="9" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="addTravelBtn" Content="Add Travel" Click="addTravelBtn_Click" Grid.Column="2" Grid.Row="7" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="checkDetailsBtn" Content="Details" Click="checkDetailsBtn_Click" Grid.Column="2" Grid.Row="8" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="removetravelsBtn" Content="Remove" Click="removetravelsBtn_Click" Grid.Column="2" Grid.Row="9" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
 
 
     </Grid>

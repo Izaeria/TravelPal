@@ -30,8 +30,12 @@ namespace TravelPal
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
-           
-                MessageBox.Show("Login unsuccessfull. Please try again!");
+            /*
+                 MessageBox.Show("Login unsuccessfull. Please try again!");
+        */
+            TravelsWindow travelsWindow = new TravelsWindow();
+            travelsWindow.Show();
+            Close();
         }
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
@@ -40,7 +44,8 @@ namespace TravelPal
             registerWindow.Show();
             Close();
         }
-    }
 
+
+    }
 
 }

@@ -23,5 +23,6 @@ namespace TravelPal.Windows
         {
             InitializeComponent();
         }
+        
     }
 }

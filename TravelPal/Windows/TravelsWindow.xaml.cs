@@ -23,5 +23,24 @@ namespace TravelPal.Windows
         {
             InitializeComponent();
         }
+        private void addTravelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddTravelWindow addTravelWindow = new AddTravelWindow();
+            addTravelWindow.Show();
+            Close();
+        }
+
+        private void checkDetailsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
+            travelDetailsWindow.Show();
+            Close();
+        }
+        private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+                 MessageBox.Show("Your travel has been removed!");
+        
+        }
     }
 }
