@@ -56,7 +56,7 @@ namespace TravelPal.Managers
             return true;
         }
 
-
+      
 
         public class Admin : IUser
         {

@@ -30,21 +30,41 @@ namespace TravelPal.Windows
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            if (txtPassword.Password != txtConfirmPassword.Password )
+            if (txtPassword.Password != txtConfirmPassword.Password)
             {
+
                 RegisterBtn.IsEnabled = false;
                 MessageBox.Show("Your passwords do not match. Try again.");
-
             }
             else
             {
+                User user = new();
+                user.Username = txtUsername.Text;
+                user.Password = txtPassword.Password;
                 RegisterBtn.IsEnabled = true;
                 MessageBox.Show("Welcome!");
+                MainWindow MainWindow = new();
+                MainWindow.Show();
+                Close();
             }
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
+            //TODO få metoden att fungera
+
+            //if (UserManager.ValidateUsername(txtUsername.Text != user.Username))
+            //{
+            //    RegisterBtn.IsEnabled = true;
+            //    MessageBox.Show("Welcome!");
+            //    MainWindow MainWindow = new();
+            //    MainWindow.Show();
+            //    Close();
+            //}
+
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
+            //Close();
         }
     }
 }
+        
+    
+
