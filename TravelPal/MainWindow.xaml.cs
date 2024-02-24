@@ -30,26 +30,29 @@ namespace TravelPal
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
-            /*
-                 MessageBox.Show("Login unsuccessfull. Please try again!");
-        */
-
+          
             string username = Username.Text;
             string password = Password.Text;
             bool user = UserManager.SignInUser(username, password);
 
-            foreach(var user in UserManager.Users)
+            foreach (IUser users in UserManager.Users)
             {
-                if (user.Username == username && user.Password == password)
+                if (users.Username == username && users.Password == password)
                 {
-TravelsWindow travelsWindow = new TravelsWindow();
-            travelsWindow.Show();
-            Close();
+                    UserManager.SignedInUser = users;
+                    TravelsWindow travelsWindow = new TravelsWindow();
+                    travelsWindow.Show();
+                    Close();
+                    return;
                 }
-            }
 
+            } 
+              MessageBox.Show("Invalid username or password!");
+                
+            }
+//TODO add admin?
             
-        }
+        
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {

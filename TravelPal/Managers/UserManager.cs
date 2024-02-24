@@ -12,7 +12,7 @@ namespace TravelPal.Managers
         public static List<IUser> Users { get; set; } = new()
         {
             new Admin {Username = "admin", Password = "password"},
-            new User {Username = "password", Password = "password"}
+            new User {Username = "username", Password = "password"}
         };
 
 
