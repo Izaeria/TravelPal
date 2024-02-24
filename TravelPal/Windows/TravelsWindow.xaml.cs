@@ -55,7 +55,7 @@ namespace TravelPal.Windows
         private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
         {
            
-                 MessageBox.Show("Your travel has been removed!");
+                 MessageBox.Show("Your travel location has been removed!");
         
         }
 

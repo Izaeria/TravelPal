@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelPal.Classes;
+using TravelPal.Managers;
+using TravelPal.Windows;
 
 namespace TravelPal.Windows
 {
@@ -18,6 +21,7 @@ namespace TravelPal.Windows
     /// Interaction logic for RegisterWindow.xaml
     /// </summary>
     public partial class RegisterWindow : Window
+
     {
         public RegisterWindow()
         {
@@ -25,6 +29,19 @@ namespace TravelPal.Windows
         }
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            if (txtPassword.Password != txtConfirmPassword.Password )
+            {
+                RegisterBtn.IsEnabled = false;
+                MessageBox.Show("Your passwords do not match. Try again.");
+
+            }
+            else
+            {
+                RegisterBtn.IsEnabled = true;
+                MessageBox.Show("Welcome!");
+            }
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();

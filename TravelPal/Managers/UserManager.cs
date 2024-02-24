@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TravelPal.Classes;
 
 namespace TravelPal.Managers
@@ -30,6 +31,32 @@ namespace TravelPal.Managers
             }
             return false;
         }
+
+        public static bool AddUser(IUser user)
+        {
+            Users.Add(user);
+            return true;
+        }
+
+        public static bool ValidateUsername(string username)
+        {
+            foreach (var user in Users)
+            {
+                if(user.Username == username)
+                {
+                    MessageBox.Show("Sorry, that username is unavailable");
+                    return false;
+                }
+            }
+            if (username.Count() > 3) 
+            {
+                MessageBox.Show("Your username needs to be at least three characters!");
+                return false;
+            }
+            return true;
+        }
+
+
 
         public class Admin : IUser
         {
