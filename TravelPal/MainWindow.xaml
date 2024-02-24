@@ -30,7 +30,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Image Source="D:\Slutprojekt_OPG1/travelpal-logo.png" Grid.Column="2" Grid.Row="1" Height="150px"/>
+        <Image Source="/Images/travelpal-logo.png" Grid.Column="2" Grid.Row="1" Height="150px"/>
 
 
 
