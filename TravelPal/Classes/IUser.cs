@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using TravelPal.Managers;
 
 namespace TravelPal.Classes
 {
@@ -14,7 +15,7 @@ namespace TravelPal.Classes
 
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Country { get; set; }
+        public Country Country { get; set; }
 
 
     }
@@ -23,15 +24,17 @@ namespace TravelPal.Classes
     public class User : IUser
     {
 
-        public List<Travel> travels = new();
+        public List<Travel> Travels = new();
 
     }
+
+  
 
     public class Admin : IUser
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Country { get; set; }
+        public Country Country { get; set; }
     }
 
     
