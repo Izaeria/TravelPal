@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelPal.Classes;
+using TravelPal.Managers;
+using TravelPal.Windows;
+
+
 
 namespace TravelPal.Windows
 {
@@ -22,7 +27,18 @@ namespace TravelPal.Windows
         public TravelsWindow()
         {
             InitializeComponent();
+            UsernameLabel();
+
         }
+
+        private void UsernameLabel()
+        {
+            lblUsername.Content = "Hello " + UserManager.SignedInUser.Username + "!";
+        }
+
+        
+
+
         private void addTravelBtn_Click(object sender, RoutedEventArgs e)
         {
             AddTravelWindow addTravelWindow = new AddTravelWindow();

@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelPal.Classes;
+using TravelPal.Managers;
+using TravelPal.Windows;
 
 namespace TravelPal.Windows
 {
@@ -19,6 +22,9 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class AddTravelWindow : Window
     {
+
+        private User users;
+
         public AddTravelWindow()
         {
             InitializeComponent();
@@ -34,7 +40,7 @@ namespace TravelPal.Windows
             TravelsWindow travelsWindow = new TravelsWindow();
             travelsWindow.Show();
             Close();
-        }
 
+        }
     }
 }

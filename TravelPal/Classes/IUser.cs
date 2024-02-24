@@ -10,9 +10,11 @@ namespace TravelPal.Classes
 {
     public class IUser
     {
+        
+
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Location { get; set; }
+        public string Country { get; set; }
 
 
     }
@@ -29,7 +31,7 @@ namespace TravelPal.Classes
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Location { get; set; }
+        public string Country { get; set; }
     }
 
     
