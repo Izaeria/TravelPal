@@ -33,9 +33,22 @@ namespace TravelPal
             /*
                  MessageBox.Show("Login unsuccessfull. Please try again!");
         */
-            TravelsWindow travelsWindow = new TravelsWindow();
+
+            string username = Username.Text;
+            string password = Password.Text;
+            bool user = UserManager.SignInUser(username, password);
+
+            foreach(var user in UserManager.Users)
+            {
+                if (user.Username == username && user.Password == password)
+                {
+TravelsWindow travelsWindow = new TravelsWindow();
             travelsWindow.Show();
             Close();
+                }
+            }
+
+            
         }
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)

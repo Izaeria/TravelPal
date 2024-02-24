@@ -9,16 +9,35 @@ namespace TravelPal.Managers
 {
     internal class UserManager
     {
-        public class User : IUser
+        public static List<IUser> Users { get; set; } = new()
         {
+            new Admin {Username = "admin", Password = "password"},
+            new User {Username = "password", Password = "password"}
+        };
 
-            public List<Travel> travels = new();
 
+        public static IUser SignedInUser { get; set; }
+
+        internal static bool SignInUser(string username, string password)
+        {
+            foreach (var user in Users)
+            {
+                if (user.Username == username && user.Password == password)
+                {
+                    SignedInUser = user;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public class Admin : IUser
         {
 
         }
+
     }
 }
+
+
+
