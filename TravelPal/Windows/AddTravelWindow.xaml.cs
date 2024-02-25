@@ -73,6 +73,18 @@ namespace TravelPal.Windows
             }
         }
 
+        private void CmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbType.SelectedItem != null && cmbType.SelectedItem.ToString() == "Vacation")
+            {
+                xbAllInclusive.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                xbAllInclusive.Visibility = Visibility.Hidden;
+            }
+        }
+
         //TODO: Allinclusive box on vacation click
         //TODO: Meetingdetails on worktravel click
 
