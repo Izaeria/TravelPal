@@ -52,20 +52,7 @@ namespace TravelPal.Windows
                 
             }
 
-            //TODO få metoden att fungera
-
-            //if (UserManager.ValidateUsername(txtUsername.Text != user.Username))
-            //{
-            //    RegisterBtn.IsEnabled = true;
-            //    MessageBox.Show("Welcome!");
-            //    MainWindow MainWindow = new();
-            //    MainWindow.Show();
-            //    Close();
-            //}
-
-            //MainWindow mainWindow = new MainWindow();
-            //mainWindow.Show();
-            //Close();
+         
         }
     }
 }

@@ -43,8 +43,9 @@ namespace TravelPal.Windows
             {
                 cmbTravellers.Items.Add(i);
             }
+            cmbType.Items.Add("Vacation");
+            cmbType.Items.Add("Worktrip");
 
-            
 
         }
 

@@ -90,6 +90,8 @@ namespace TravelPal.Windows
             travelDetailsWindow.Show();
             Close();
         }
+
+        //TODO: Actually remove a travel
         private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
         {
                  MessageBox.Show("Your travel location has been removed!");
@@ -100,6 +102,11 @@ namespace TravelPal.Windows
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
+        }
+
+        private void aboutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("A small little company for easy travels");
         }
     }
 }
