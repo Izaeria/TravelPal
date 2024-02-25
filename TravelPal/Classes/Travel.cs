@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelPal.Managers;
 using TravelPal.Classes;
+using System.Xaml;
 
 namespace TravelPal.Classes
 {
@@ -23,36 +24,6 @@ namespace TravelPal.Classes
     
 
     }
-
-
-    public void AddTravel(Travel travel)
-    {
-        Travels.Add(travel);
-    }
-
-    public void
-
-
-        public void RemoveTravel(Travel travel)
-    {
-        Travels.Remove(travel)
-    }
-
-
-
-    public class WorkTrip : Travel
-    {
-        public string MeetingDetails { get; set; }
-
-        //TODO meetingDetails
-        //TODO GetInfo();
-    }
-
-    public class Vacation : Travel
-    {
-        public bool AllInclusive { get; set; }
-
-        //TODO GetInfo();
 
 
 
