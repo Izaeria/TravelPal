@@ -34,20 +34,20 @@
         <TextBlock Grid.Column="2" Grid.Row="2" FontSize ="30" Text="Add Details"  HorizontalAlignment="center"   />
 
         <TextBlock Grid.Column="1" Grid.Row="3" FontSize ="20" Text="Country:" Margin="0,0,10,10" HorizontalAlignment="right"   />
-        <TextBox x:Name="country" Grid.Column="2" Grid.Row="3"  />
+        <ComboBox x:Name="cmbCountry" Grid.Column="2" Grid.Row="3"  />
 
         <TextBlock Grid.Column="1" Grid.Row="4" FontSize ="20" Text="City:" Margin="0,0,10,10" HorizontalAlignment="right"    />
-        <TextBox x:Name="city" Grid.Column="2" Grid.Row="4"  />
+        <TextBox x:Name="txtCity" Grid.Column="2" Grid.Row="4"  />
 
         <TextBlock Grid.Column="1" Grid.Row="5" FontSize ="20" Text="No. of Travelers" Margin="0,0,10,10" HorizontalAlignment="right"   />
-        <TextBox x:Name="travelers" Grid.Column="2" Grid.Row="5"  />
+        <ComboBox x:Name="cmbTravellers" Grid.Column="2" Grid.Row="5"  />
 
         <TextBlock Grid.Column="1" Grid.Row="6" FontSize ="20" Text="Work or Vacation:" Margin="0,0,10,10" HorizontalAlignment="right"    />
-        <ComboBox Name="workOrVacation" Grid.Column="2" Grid.Row="6"/>
+        <ComboBox Name="cmbWorkOrVacation" Grid.Column="2" Grid.Row="6"/>
 
         <Button x:Name="saveDetailsBtn" Content="Save" Grid.Column="2" Click="saveDetailsBtn_Click" Grid.Row="8" FontSize="10" Margin ="85,5" Width="60" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
 
-        <Button x:Name="goBackBtn" Content="Go back to previous page" Click="goBackBtn_Click" Grid.Column="2" Grid.Row="9" FontSize="10" Margin ="85,5" Width="10" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="goBackBtn" Content="Go back to previous page" Click="goBackBtn_Click" Grid.Column="2" Grid.Row="9" FontSize="10" Margin ="85,5" Width="150" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
 
     </Grid>
 </Window>

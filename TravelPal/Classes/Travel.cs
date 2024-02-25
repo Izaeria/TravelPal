@@ -23,7 +23,7 @@ namespace TravelPal.Classes
         }
         public virtual string GetInfo()
         {
-            string info = $"Destination {Destination}, Country: {Country}";
+            string info = $"{Destination} - {Country}";
             return info;
         }
 

@@ -28,6 +28,7 @@ namespace TravelPal.Windows
         {
             InitializeComponent();
             UsernameLabel();
+            DisplayTravels();
 
         }
 
@@ -36,7 +37,44 @@ namespace TravelPal.Windows
             lblUsername.Content = "Hello " + UserManager.SignedInUser.Username + "!";
         }
 
-        
+        private void DisplayTravels()
+        {
+            if(UserManager.SignedInUser.GetType() == typeof(User)) 
+            {
+             //
+            
+            User user = (User)UserManager.SignedInUser; 
+          
+                foreach(Travel travel in user.Travels)
+                {
+                    ListViewItem item = new();
+                    item.Tag = travel;
+                    item.Content = travel.GetInfo();
+                    lstTravels.Items.Add(item);
+                }
+            }
+            else
+            {
+                foreach(IUser user in UserManager.Users)
+                {
+                    if(user.GetType() == typeof(User))
+                    {
+                        User user1 = (User)user;
+                        foreach (Travel travel in user1.Travels)
+                        {
+                            ListViewItem item = new();
+                            item.Tag = travel;
+                            item.Content = travel.GetInfo();
+                            lstTravels.Items.Add(item);
+                        }
+
+                    }
+                }
+            }
+            
+            
+        }
+
 
 
         private void addTravelBtn_Click(object sender, RoutedEventArgs e)

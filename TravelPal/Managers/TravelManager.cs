@@ -24,9 +24,9 @@ namespace TravelPal.Managers
 
 
 
-        public static void AddTravel(Travel travel)
+        public static void AddTravel(Travel travel, User signedInUser)
         {
-            Travels.Add(travel);
+            signedInUser.Travels.Add(travel);
         }
 
 
