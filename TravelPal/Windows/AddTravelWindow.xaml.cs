@@ -42,8 +42,9 @@ namespace TravelPal.Windows
             for (int i = 1; i < 11; i++)
             {
                 cmbTravellers.Items.Add(i);
-
             }
+
+            
 
         }
 
@@ -67,16 +68,6 @@ namespace TravelPal.Windows
                     TravelManager.AddTravel(newTravel, user);
                     MessageBox.Show("Your travel has been saved!");
 
-                    //Country countryNameString = cmbCountry.Text;
-                    
-                    //string destination = txtCity.Text;
-                    //string travellers = cmbTravellers.Text;
-
-                    //Travel newTravel = new(destination, country, travellers);
-
-                    //User user = (User)UserManager.SignedInUser;
-                    //TravelManager.AddTravel(newTravel, user);
-                    //MessageBox.Show("Your travel has been saved!");
                 }
             }
         }
