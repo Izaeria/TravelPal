@@ -21,12 +21,16 @@ namespace TravelPal.Classes
             Country = country;
             Travellers = travellers;
         }
-    
+        public virtual string GetInfo()
+        {
+            string info = $"Destination {Destination}, Country: {Country}";
+            return info;
+        }
+
 
     }
 
 
 
-    }
 
 }
