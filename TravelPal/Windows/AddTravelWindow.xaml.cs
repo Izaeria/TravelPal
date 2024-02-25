@@ -81,7 +81,11 @@ namespace TravelPal.Windows
             TravelsWindow travelsWindow = new TravelsWindow();
             travelsWindow.Show();
             Close();
+        }
 
+        private void addItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Your item(s) has been added!");
         }
     }
 }
