@@ -8,22 +8,23 @@ using TravelPal.Classes;
 using TravelPal.Managers;
 using TravelPal.Windows;
 
+
 namespace TravelPal.Managers
 {
-    public class TravelManager
+    public static class TravelManager
     {
 
-        public List<Travel> Travels { get; set; } = new()
+        public static List<Travel> Travels { get; set; } = new()
         {
-            new Vacation("Venice", Country.Italy),
-            new WorkTrip("Toronto", Country.Canada)
+            new Vacation("Venice", Country.Italy, 2, true),
+            new WorkTrip("Toronto", Country.Canada, 4, "Business")
         };
 
 
 
 
 
-        public void AddTravel(Travel travel)
+        public static void AddTravel(Travel travel)
         {
             Travels.Add(travel);
         }
@@ -31,7 +32,7 @@ namespace TravelPal.Managers
 
 
 
-        public void RemoveTravel(Travel travel)
+        public static void RemoveTravel(Travel travel)
         {
             Travels.Remove(travel);
         }
@@ -39,38 +40,11 @@ namespace TravelPal.Managers
 
 
 
-        public class WorkTrip : Travel
-        {
-            public string MeetingDetails { get; set; }
-
-            public WorkTrip(string destination, Country country, int travellers, string meetingDetails) : base(destination, country, travellers)
-            {
-                MeetingDetails = meetingDetails;
-            }
+        
 
 
 
-
-            public class Vacation : Travel
-            {
-                public bool AllInclusive { get; set; }
-
-                public Vacation(string destination, Country country, int travellers, bool allInclusive) : base(destination, country, travellers)
-                {
-                    AllInclusive = allInclusive;
-                }
-
-
-
-                public override string GetInfo()
-                {
-                    return base.GetInfo();
-                }
-
-
-
-
-
-            }
-        }
+          
+       
     }
+}

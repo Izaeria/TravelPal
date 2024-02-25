@@ -19,7 +19,7 @@ namespace TravelPal.Managers
 
         public static IUser SignedInUser { get; set; }
 
-        internal static bool SignInUser(string username, string password)
+        public static bool SignInUser(string username, string password)
         {
             foreach (var user in Users)
             {
@@ -48,12 +48,24 @@ namespace TravelPal.Managers
                     return false;
                 }
             }
-            if (username.Count() > 3) 
+            if (username.Count() < 3) 
             {
                 MessageBox.Show("Your username needs to be at least three characters!");
                 return false;
             }
             return true;
+        }
+
+        public static bool RegisterUser(string username, string password)
+        {
+            bool isValidated = ValidateUsername(username);
+            if (isValidated)
+            {
+                User newUser = new() { Username = username, Password = password };
+                Users.Add(newUser);
+                return true;
+            }
+            return false;
         }
 
       

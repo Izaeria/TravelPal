@@ -7,18 +7,17 @@ using TravelPal.Managers;
 
 namespace TravelPal.Classes
 {
-    public class Vacation : Travel
-    {
-        public bool AllInclusive { get; set; }
-
-        public Vacation(string destination, Country country, int travellers, bool allInclusive) : base(destination, country, travellers)
+  
+        public class WorkTrip : Travel
         {
-            AllInclusive = allInclusive;
-        }
+            public string MeetingDetails { get; set; }
 
+            public WorkTrip(string destination, Country country, int travellers, string meetingDetails) : base(destination, country, travellers)
+            {
+                MeetingDetails = meetingDetails;
+            }
 
-
-        public override string GetInfo()
+            public override string GetInfo()
         {
             return base.GetInfo();
         }

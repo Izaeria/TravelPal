@@ -33,19 +33,23 @@ namespace TravelPal.Windows
             if (txtPassword.Password != txtConfirmPassword.Password)
             {
 
-                RegisterBtn.IsEnabled = false;
+              
                 MessageBox.Show("Your passwords do not match. Try again.");
             }
             else
             {
-                User user = new();
-                user.Username = txtUsername.Text;
-                user.Password = txtPassword.Password;
-                RegisterBtn.IsEnabled = true;
-                MessageBox.Show("Welcome!");
-                MainWindow MainWindow = new();
-                MainWindow.Show();
-                Close();
+               string username = txtUsername.Text;
+               string password = txtPassword.Password;
+
+               bool registerSuccess = UserManager.RegisterUser(username, password);
+
+                if (registerSuccess) {
+                    MessageBox.Show("Welcome!");
+                    MainWindow MainWindow = new();
+                    MainWindow.Show();
+                    Close();
+                }
+                
             }
 
             //TODO få metoden att fungera
