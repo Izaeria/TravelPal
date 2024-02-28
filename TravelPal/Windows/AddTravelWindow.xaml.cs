@@ -96,10 +96,12 @@ namespace TravelPal.Windows
 
 
 
-        //TODO: Allinclusive box on vacation click
-        //TODO: Meetingdetails on worktravel click
+        //TODO: Allinclusive box on vacation click save and show in details
+        //TODO: Meetingdetails on worktravel click save and show in details
+        //TODO Add packing list inputs
+        //TODO Travel Document
 
-      
+
         private void goBackBtn_Click(object sender, RoutedEventArgs e)
         {
             TravelsWindow travelsWindow = new TravelsWindow();
@@ -110,6 +112,11 @@ namespace TravelPal.Windows
         private void addItemBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Your item(s) has been added!");
+        }
+
+        private void txtTravelDocument_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
