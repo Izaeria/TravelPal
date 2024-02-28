@@ -83,11 +83,23 @@ namespace TravelPal.Windows
             {
                 xbAllInclusive.Visibility = Visibility.Hidden;
             }
+            if (cmbType.SelectedItem != null && cmbType.SelectedItem.ToString() == "Worktrip")
+            {
+                txtbMeetingDetails.Visibility = Visibility.Visible; 
+                txtMeetingDetails.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                txtMeetingDetails.Visibility= Visibility.Hidden;
+            }
         }
+
+
 
         //TODO: Allinclusive box on vacation click
         //TODO: Meetingdetails on worktravel click
 
+      
         private void goBackBtn_Click(object sender, RoutedEventArgs e)
         {
             TravelsWindow travelsWindow = new TravelsWindow();
