@@ -27,3 +27,5 @@ D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\Travels
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\AddTravelWindow.baml
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\TravelDetailsWindow.baml
 D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\Windows\TravelsWindow.baml
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\obj\Debug\net7.0-windows\TravelPal_Content.g.cs
+D:\Slutprojekt_OPG1\TravelPal\TravelPal\bin\Debug\net7.0-windows\Images\travelpal-logo.png
