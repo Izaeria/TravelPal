@@ -55,13 +55,26 @@ namespace TravelPal.Windows
 
                     if (vacation.AllInclusive)
                     {
+                        txtbAllInclusive.Visibility = Visibility.Visible;
+                        txtAllInclusive.Visibility = Visibility.Visible;
                         txtAllInclusive.Text = "Yes";
                     }
                     else
                     {
+                        txtbAllInclusive.Visibility = Visibility.Visible;
                         txtAllInclusive.Text = "No";
                     }
                 }
+            }
+            if (travel.GetType() == typeof(WorkTrip))
+            {
+                WorkTrip worktrip = (WorkTrip)travel;
+                txtDestination.Text = worktrip.Destination;
+                txtCountry.Text = worktrip.Country.ToString();
+                txtTravelers.Text = worktrip.Travelers.ToString();
+                txtbMeetingDetails.Visibility = Visibility.Visible;
+                txtMeetingDetails.Visibility = Visibility.Visible;
+
             }
         }
   private void goBackBtn_Click(object sender, RoutedEventArgs e)
