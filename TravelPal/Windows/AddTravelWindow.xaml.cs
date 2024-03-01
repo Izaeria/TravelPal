@@ -57,23 +57,51 @@ namespace TravelPal.Windows
             }
             else
             {
-                Country selectedCountry;
-                if (Enum.TryParse(cmbCountry.Text, out selectedCountry))
+                if (cmbType.SelectedIndex == 0)
                 {
-                    string destination = txtCity.Text;
-                    int travelers = cmbTravelers.SelectedIndex;
+                    Country selectedCountry;
+                    if (Enum.TryParse(cmbCountry.Text, out selectedCountry))
+                    {
+                        string destination = txtCity.Text;
+                        int travelers = cmbTravelers.SelectedIndex + 1;
+                        bool isAllInclusive = false;
+                        if (xbAllInclusive.IsChecked == true)
+                        {
+                            isAllInclusive = true;
+                        }
 
-                    Travel newTravel = new Travel(destination, selectedCountry, travelers);
 
-                    User user = (User)UserManager.SignedInUser;
-                    TravelManager.AddTravel(newTravel, user);
-                    MessageBox.Show("Your travel has been saved!");
 
+                        Vacation newVacation = new Vacation(destination, selectedCountry, travelers, isAllInclusive);
+
+                        User user = (User)UserManager.SignedInUser;
+                        TravelManager.AddTravel(newVacation, user);
+                        MessageBox.Show("Your travel has been saved!");
+
+                    }
+                }
+                else
+                {
+                    Country selectedCountry;
+                    if (Enum.TryParse(cmbCountry.Text, out selectedCountry))
+                    {
+                        string destination = txtCity.Text;
+                        int travelers = cmbTravelers.SelectedIndex + 1;
+                        string meetingDetails = txtMeetingDetails.Text;
+
+
+
+                        WorkTrip newWorktrip = new WorkTrip(destination, selectedCountry, travelers, meetingDetails);
+
+                        User user = (User)UserManager.SignedInUser;
+                        TravelManager.AddTravel(newWorktrip, user);
+                        MessageBox.Show("Your travel has been saved!");
+
+                    }
                 }
             }
-        }
 
-
+            }
 
         private void CmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -103,7 +131,6 @@ namespace TravelPal.Windows
             {
                 if (xbTravelDocument.IsChecked == true)
                 {
-                    //Lägg till ett travel document
 
                     string name = txtAddLuggage.Text;
                     bool isRequired;
@@ -121,24 +148,8 @@ namespace TravelPal.Windows
 
                     ClearLuggageFields();
                 }
-                else 
-                {
-                        string name = txtAddLuggage.Text;
-                    int quantity = int.Parse(cmbQuantity.SelectedItem.ToString());
-
-                         Items items = new(name, quantity);
-
-                        ListViewItem listViewItem = new();
-                        listViewItem.Tag = items;
-                        listViewItem.Content = items.GetInfo();
-                        lstLuggage.Items.Add(listViewItem);
-
-                        ClearLuggageFields();
-
-
-
-                    }
-                }
+            }
+                
         }
         private void AddTravelDocument(string name, bool isRequired)
         {
@@ -167,10 +178,10 @@ namespace TravelPal.Windows
             Close();
         }
 
-        private void addItemBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Your item(s) has been added!");
-        }
+        //private void addLuggageBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show("Your item has been added!");
+        //}
 
         private void txtTravelDocument_TextChanged(object sender, TextChangedEventArgs e)
         {
