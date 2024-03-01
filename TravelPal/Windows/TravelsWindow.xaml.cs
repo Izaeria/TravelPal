@@ -31,8 +31,6 @@ namespace TravelPal.Windows
         public TravelsWindow()
         {
             InitializeComponent();
-           
-
             UsernameLabel();
             DisplayTravels();
 

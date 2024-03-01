@@ -51,10 +51,11 @@ namespace TravelPal.Windows
 
         private void saveDetailsBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(cmbCountry.Text) || string.IsNullOrEmpty(txtCity.Text))
+            if (string.IsNullOrEmpty(cmbCountry.Text) || string.IsNullOrEmpty(txtCity.Text) || cmbTravelers.SelectedItem == null || cmbType.SelectedItem == null)
             {
                 MessageBox.Show("Please ensure all fields are completed.");
             }
+           
             else
             {
                 if (cmbType.SelectedIndex == 0)
@@ -69,8 +70,6 @@ namespace TravelPal.Windows
                         {
                             isAllInclusive = true;
                         }
-
-
 
                         Vacation newVacation = new Vacation(destination, selectedCountry, travelers, isAllInclusive);
 
@@ -124,11 +123,10 @@ namespace TravelPal.Windows
             }
         }
 
-        //TODO Add packing list inputs
+
         private void addLuggageBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtAddLuggage.Text))
-            {
+            
                 if (xbTravelDocument.IsChecked == true)
                 {
 
@@ -148,7 +146,21 @@ namespace TravelPal.Windows
 
                     ClearLuggageFields();
                 }
-            }
+                else 
+                {
+                        string name = txtAddLuggage.Text;
+                  
+
+                         Items items = new(name);
+
+                        ListViewItem listViewItem = new();
+                        listViewItem.Tag = items;
+                        listViewItem.Content = items.GetInfo();
+                        lstLuggage.Items.Add(listViewItem);
+
+                        ClearLuggageFields();
+
+                    }
                 
         }
         private void AddTravelDocument(string name, bool isRequired)
@@ -159,7 +171,6 @@ namespace TravelPal.Windows
             listViewItem.Tag = travelDocument;
             listViewItem.Content = travelDocument.GetInfo();
 
-
             lstLuggage.Items.Add(listViewItem);
         }
         private void ClearLuggageFields()
@@ -167,7 +178,6 @@ namespace TravelPal.Windows
             txtAddLuggage.Clear();
             xbRequired.IsChecked = false;
             xbTravelDocument.IsChecked = false;
-         
         }
 
 
@@ -178,10 +188,6 @@ namespace TravelPal.Windows
             Close();
         }
 
-        //private void addLuggageBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MessageBox.Show("Your item has been added!");
-        //}
 
         private void txtTravelDocument_TextChanged(object sender, TextChangedEventArgs e)
         {

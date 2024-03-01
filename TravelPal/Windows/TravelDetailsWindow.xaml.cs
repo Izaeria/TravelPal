@@ -74,9 +74,12 @@ namespace TravelPal.Windows
                 txtTravelers.Text = worktrip.Travelers.ToString();
                 txtbMeetingDetails.Visibility = Visibility.Visible;
                 txtMeetingDetails.Visibility = Visibility.Visible;
+                txtMeetingDetails.Text = worktrip.MeetingDetails;
 
             }
         }
+
+
 
 
         private void goBackBtn_Click(object sender, RoutedEventArgs e)

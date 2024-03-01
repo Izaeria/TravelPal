@@ -32,7 +32,7 @@ namespace TravelPal
         {
           
             string username = Username.Text;
-            string password = Password.Text;
+            string password = passwordBox.Password;
             bool user = UserManager.SignInUser(username, password);
 
             foreach (IUser users in UserManager.Users)
@@ -50,7 +50,7 @@ namespace TravelPal
               MessageBox.Show("Invalid username or password!");
                 
             }
-//TODO add a
+
             
         
 
