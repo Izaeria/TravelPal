@@ -31,6 +31,13 @@ namespace TravelPal.Windows
         public TravelsWindow()
         {
             InitializeComponent();
+            {
+                if (UserManager.SignedInUser is Admin)
+                {
+                    addTravelBtn.Visibility = Visibility.Hidden;
+                }
+            }
+
             UsernameLabel();
             DisplayTravels();
 
@@ -39,14 +46,15 @@ namespace TravelPal.Windows
         private void UsernameLabel()
         {
             lblUsername.Content = "Hello " + UserManager.SignedInUser.Username + "!";
+          
         }
 
         private void DisplayTravels()
         {
+
             if (UserManager.SignedInUser.GetType() == typeof(User))
             {
-                //
-
+          
                 User user = (User)UserManager.SignedInUser;
 
                 foreach (Travel travel in user.Travels)
@@ -88,7 +96,7 @@ namespace TravelPal.Windows
             Close();
         }
 
-        //TODO: Actually show details
+        
         private void checkDetailsBtn_Click(object sender, RoutedEventArgs e)
         {
             if (lstTravels.SelectedItem != null)
@@ -112,43 +120,51 @@ namespace TravelPal.Windows
 
         private void removeTravelsBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            if (lstTravels.SelectedItem != null)
+            
+            if (lstTravels != null)
             {
-               if (UserManager.SignedInUser is Admin)
+                if (lstTravels.SelectedItem != null)
                 {
-                   
-                    Travel selectedTravel = (Travel)((ListViewItem)lstTravels.SelectedItem).Tag;
-                    lstTravels.Items.Remove(selectedTravel);
+                    ListViewItem selectedItem = (ListViewItem)lstTravels.SelectedItem;
+                    Travel selectedTravel = (Travel)selectedItem.Tag;
 
-                    // Remove the travel from all users' lists
-                    foreach (IUser user in UserManager.Users)
+                    if (UserManager.SignedInUser is User)
                     {
-                        if (user is User)
+                       
+                        User user = UserManager.SignedInUser as User;
+                        user.Travels.Remove(selectedTravel);
+                    }
+                    else if (UserManager.SignedInUser is Admin)
+                    {
+                       foreach (User user in UserManager.Users)
                         {
-                            ((User)user).Travels.Remove(selectedTravel);
+                            if (user is User)
+                            {
+                                User usernew = (User)user;
+
+                                if (user.Travels.Contains(selectedTravel))
+                                {
+                                   
+                                    user.Travels.Remove(selectedTravel);
+                                    break;
+                                }
+                            }
                         }
                     }
+
+                    lstTravels.Items.Remove(selectedItem);
                 }
-                if (UserManager.SignedInUser is User)
+                else
                 {
-                    Travel selectedTravel = (Travel)((ListViewItem)lstTravels.SelectedItem).Tag;
-                    lstTravels.Items.Remove(lstTravels.SelectedItem);
-
-                    User thisUser = (User)UserManager.SignedInUser;
-                    thisUser.Travels.Remove(selectedTravel);
+                    MessageBox.Show("You must select a travel before clicking remove!");
                 }
+
             }
 
-            else
-            {
-                MessageBox.Show("You must select a travel to remove!");
-            }
         }
 
-       
 
-            private void signOutBtn_Click(object sender, RoutedEventArgs e)
+        private void signOutBtn_Click(object sender, RoutedEventArgs e)
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
