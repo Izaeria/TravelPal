@@ -26,22 +26,40 @@ namespace TravelPal.Windows
         public RegisterWindow()
         {
             InitializeComponent();
+            LoadComboBoxes();
         }
-        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+
+
+        private void LoadComboBoxes()
+        {
+            foreach (Country country in Enum.GetValues(typeof(Country)))
+            {
+                cmbCountry.Items.Add(country);
+            }
+
+        }
+            private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
 
             if (txtPassword.Password != txtConfirmPassword.Password)
             {
-
-              
                 MessageBox.Show("Your passwords do not match. Try again.");
+            }
+            if (UserManager.Users.Any(user => user.Username == txtUsername.Text))
+            {
+                MessageBox.Show("That username is already taken. Please choose another one.");
+            }
+            if (cmbCountry.SelectedItem == null)
+            {
+                MessageBox.Show("Please choose a country of origin!");
             }
             else
             {
                string username = txtUsername.Text;
                string password = txtPassword.Password;
+               Country country = (Country)cmbCountry.SelectedItem;
 
-               bool registerSuccess = UserManager.RegisterUser(username, password);
+               bool registerSuccess = UserManager.RegisterUser(username, password, country);
 
                 if (registerSuccess) {
                     MessageBox.Show("Welcome!");

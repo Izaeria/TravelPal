@@ -99,7 +99,7 @@ namespace TravelPal.Windows
         //TODO: Allinclusive box on vacation click save and show in details
         //TODO: Meetingdetails on worktravel click save and show in details
         //TODO Add packing list inputs
-        //TODO Travel Document
+        //TODO Travel Document required, european country not required
 
 
         private void goBackBtn_Click(object sender, RoutedEventArgs e)

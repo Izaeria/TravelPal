@@ -61,7 +61,7 @@ namespace TravelPal.Managers
             return true;
         }
 
-        public static bool RegisterUser(string username, string password)
+        public static bool RegisterUser(string username, string password, Country country)
         {
             bool isValidated = ValidateUsername(username);
             if (isValidated)
