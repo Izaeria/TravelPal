@@ -37,7 +37,7 @@
         <Label Name="lblUsername" Grid.Column="3" Grid.Row="1" FontSize ="14" Content="Hello"   HorizontalAlignment="Center" Foreground="#7B68EE" FontWeight="Bold"  />
 
 
-        <Button x:Name="addTravelBtn" Content="Add Travel" Click="addTravelBtn_Click" Grid.Column="1" Grid.Row="7" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
+        <Button x:Name="addTravelBtn" Content="Add Travel" Click="addTravelBtn_Click" Grid.Column="1" Grid.Row="7" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA" Visibility="Visible"/>
         <Button x:Name="checkDetailsBtn" Content="Details" Click="checkDetailsBtn_Click" Grid.Column="1" Grid.Row="8" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
         <Button x:Name="removeTravelsBtn" Content="Remove" Click="removeTravelsBtn_Click" Grid.Column="1" Grid.Row="9" Margin="35,10,35,0" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
         <Button x:Name="signOutBtn" Content="Sign out" Click="signOutBtn_Click" Grid.Column="3" Grid.Row="11" Margin="35,10,35,0" Width="90" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>

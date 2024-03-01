@@ -38,10 +38,12 @@ namespace TravelPal.Windows
             this.travel = travel;
             InitializeComponent();
             LoadAllTravelInfo();
+
         }
       
         public void LoadAllTravelInfo()
         {
+            
             {
                 if (travel.GetType() == typeof(Vacation))
                 {
@@ -74,7 +76,9 @@ namespace TravelPal.Windows
 
             }
         }
-  private void goBackBtn_Click(object sender, RoutedEventArgs e)
+
+
+        private void goBackBtn_Click(object sender, RoutedEventArgs e)
         {
             TravelsWindow travelsWindow = new TravelsWindow();
             travelsWindow.Show();

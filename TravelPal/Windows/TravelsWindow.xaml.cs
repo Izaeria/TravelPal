@@ -31,12 +31,7 @@ namespace TravelPal.Windows
         public TravelsWindow()
         {
             InitializeComponent();
-            {
-                if (UserManager.SignedInUser is Admin)
-                {
-                    addTravelBtn.Visibility = Visibility.Hidden;
-                }
-            }
+           
 
             UsernameLabel();
             DisplayTravels();
@@ -91,9 +86,15 @@ namespace TravelPal.Windows
 
         private void addTravelBtn_Click(object sender, RoutedEventArgs e)
         {
+          if (UserManager.SignedInUser is Admin)
+                {
+                    addTravelBtn.IsEnabled = false;
+                }
+            else { 
             AddTravelWindow addTravelWindow = new AddTravelWindow();
             addTravelWindow.Show();
             Close();
+            }
         }
 
         
