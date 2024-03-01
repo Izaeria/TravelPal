@@ -84,6 +84,7 @@ namespace TravelPal.Windows
             Close();
         }
 
+        //TODO: Actually show details
         private void checkDetailsBtn_Click(object sender, RoutedEventArgs e)
         {
             TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
@@ -94,7 +95,14 @@ namespace TravelPal.Windows
         //TODO: Actually remove a travel
         private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
         {
-                 MessageBox.Show("Your travel location has been removed!");
+            
+ //           if ()
+
+ //           else
+ //           {
+ //MessageBox.Show("Your travel location has been removed!");
+ //           }
+                
         }
 
         private void signOutBtn_Click(object sender, RoutedEventArgs e)
@@ -104,6 +112,7 @@ namespace TravelPal.Windows
             Close();
         }
 
+        //TODO Write about how the app works
         private void aboutBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("A small little company for easy travels");
