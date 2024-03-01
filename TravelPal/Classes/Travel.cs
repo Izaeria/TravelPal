@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TravelPal.Managers;
 using TravelPal.Classes;
 using System.Xaml;
+using System.Xml.Linq;
 
 namespace TravelPal.Classes
 {
@@ -30,7 +31,6 @@ namespace TravelPal.Classes
 
     }
 
-
-
+  
 
 }

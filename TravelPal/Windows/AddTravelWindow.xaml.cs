@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using TravelPal.Classes;
 using TravelPal.Managers;
 using TravelPal.Windows;
+using static TravelPal.Classes.Luggage;
 
 namespace TravelPal.Windows
 {
@@ -72,6 +73,8 @@ namespace TravelPal.Windows
             }
         }
 
+
+
         private void CmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cmbType.SelectedItem != null && cmbType.SelectedItem.ToString() == "Vacation")
@@ -93,12 +96,51 @@ namespace TravelPal.Windows
             }
         }
 
-
-
-        //TODO: Allinclusive box on vacation click save and show in details
-        //TODO: Meetingdetails on worktravel click save and show in details
         //TODO Add packing list inputs
-        //TODO Travel Document required, european country not required
+        private void addLuggageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtAddLuggage.Text))
+            {
+                if (xbTravelDocument.IsChecked == true)
+                {
+                    //Lägg till ett travel document
+
+                    string name = txtAddLuggage.Text;
+                    bool isRequired;
+                    string required;
+                    if (xbRequired.IsChecked == true)
+                    {
+                        isRequired = true;
+                    }
+                    else
+                    {
+                        isRequired = false;
+                    }
+
+                    AddTravelDocument(name, isRequired);
+
+                    ClearLuggageFields();
+                }
+            }
+        }
+        private void AddTravelDocument(string name, bool isRequired)
+        {
+            TravelDocument travelDocument = new(name, isRequired);
+
+            ListViewItem listViewItem = new();
+            listViewItem.Tag = travelDocument;
+            listViewItem.Content = travelDocument.GetInfo();
+
+
+            lstLuggage.Items.Add(listViewItem);
+        }
+        private void ClearLuggageFields()
+        {
+            txtAddLuggage.Clear();
+            xbRequired.IsChecked = false;
+            xbTravelDocument.IsChecked = false;
+         
+        }
 
 
         private void goBackBtn_Click(object sender, RoutedEventArgs e)
