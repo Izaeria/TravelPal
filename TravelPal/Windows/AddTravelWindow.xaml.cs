@@ -24,7 +24,6 @@ namespace TravelPal.Windows
     public partial class AddTravelWindow : Window
     {
 
-        private User users;
 
         public AddTravelWindow()
         {
@@ -41,7 +40,7 @@ namespace TravelPal.Windows
             
             for (int i = 1; i < 11; i++)
             {
-                cmbTravellers.Items.Add(i);
+                cmbTravelers.Items.Add(i);
             }
             cmbType.Items.Add("Vacation");
             cmbType.Items.Add("Worktrip");
@@ -61,9 +60,9 @@ namespace TravelPal.Windows
                 if (Enum.TryParse(cmbCountry.Text, out selectedCountry))
                 {
                     string destination = txtCity.Text;
-                    int travellers = cmbTravellers.SelectedIndex;
+                    int travelers = cmbTravelers.SelectedIndex;
 
-                    Travel newTravel = new Travel(destination, selectedCountry, travellers);
+                    Travel newTravel = new Travel(destination, selectedCountry, travelers);
 
                     User user = (User)UserManager.SignedInUser;
                     TravelManager.AddTravel(newTravel, user);

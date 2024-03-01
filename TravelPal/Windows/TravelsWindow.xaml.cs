@@ -25,6 +25,8 @@ namespace TravelPal.Windows
     /// </summary>
     public partial class TravelsWindow : Window
     {
+        private IUser user;
+
         public TravelsWindow()
         {
             InitializeComponent();
@@ -88,92 +90,57 @@ namespace TravelPal.Windows
         //TODO: Actually show details
         private void checkDetailsBtn_Click(object sender, RoutedEventArgs e)
         {
-            TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
+            if (lstTravels.SelectedItem != null)
+            { 
+                TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
             travelDetailsWindow.Show();
             Close();
-        }
-        private void removeTravelsBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (lstTravels.SelectedItem != null)
-            {
-                if (UserManager.SignedInUser is User)
-                {
-
-                    Travel selectedTravel = (Travel)((ListBoxItem)lstTravels.SelectedItem).Tag;
-                    lstTravels.Items.Remove(lstTravels.SelectedItem);
-
-                    User thisUser = (User)UserManager.SignedInUser;
-                    thisUser.Travels.Remove(selectedTravel);
-
-
-                }
-                else
-                {
-                    foreach (IUser users in UserManager.Users)
-                    {
-
-                        if (UserManager.SignedInUser is Admin)
-                        {
-                            User currentUser = (User)users;
-                            Travel selectedTravel = (Travel)lstTravels.SelectedItem;
-
-                            if (currentUser.Travels.Contains(selectedTravel))
-                            {
-                                // Remove the travel from the user's travels list
-                                currentUser.Travels.Remove(selectedTravel);
-                            }
-                        }
-
-                    }
-
-                }
             }
             else
             {
                 MessageBox.Show("You must select an existing travel");
             }
-
-
         }
 
-            //TODO: Actually remove a travel
-            //private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
-            //{
-
-            //    if (selectedTravel == null)
-            //    {
-
-            //    }
-
-            //    else
-            //            {
-            //                MessageBox.Show("Your travel location has been removed!");
-            //            }
-
-            //}
-
-            //private Travel selectedTravel;
 
 
-            //// Metod för att kunna välja en travel
-            //public Travel SelectedTravel
-            //{
-            //    get { return selectedTravel; }
-            //    set
-            //    {
-            //        selectedTravel = value;
-            //        OnPropertyChanged(nameof(SelectedTravel)); 
-            //    }
-            //}
+        private void removeTravelsBtn_Click(object sender, RoutedEventArgs e)
+        {
 
+            if (lstTravels.SelectedItem != null)
+            {
+               if (UserManager.SignedInUser is Admin)
+                {
+                   
+                    Travel selectedTravel = (Travel)((ListViewItem)lstTravels.SelectedItem).Tag;
+                    lstTravels.Items.Remove(selectedTravel);
 
-            //public event PropertyChangedEventHandler PropertyChanged;
+                    // Remove the travel from all users' lists
+                    foreach (IUser user in UserManager.Users)
+                    {
+                        if (user is User)
+                        {
+                            ((User)user).Travels.Remove(selectedTravel);
+                        }
+                    }
+                }
+                if (UserManager.SignedInUser is User)
+                {
+                    Travel selectedTravel = (Travel)((ListViewItem)lstTravels.SelectedItem).Tag;
+                    lstTravels.Items.Remove(lstTravels.SelectedItem);
 
-            //protected void OnPropertyChanged(string propertyName)
-            //{
-            //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            //}
+                    User thisUser = (User)UserManager.SignedInUser;
+                    thisUser.Travels.Remove(selectedTravel);
+                }
+            }
 
+            else
+            {
+                MessageBox.Show("You must select a travel to remove!");
+            }
+        }
+
+       
 
             private void signOutBtn_Click(object sender, RoutedEventArgs e)
             {

@@ -11,7 +11,7 @@ namespace TravelPal.Classes
     {
         public bool AllInclusive { get; set; }
 
-        public Vacation(string destination, Country country, int travellers, bool allInclusive) : base(destination, country, travellers)
+        public Vacation(string destination, Country country, int travelers, bool allInclusive) : base(destination, country, travelers)
         {
             AllInclusive = allInclusive;
         }

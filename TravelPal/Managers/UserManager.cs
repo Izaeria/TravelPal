@@ -12,7 +12,7 @@ namespace TravelPal.Managers
     {
         public static List<IUser> Users { get; set; } = new()
         {
-            new Admin {Username = "admin", Password = "password", Country = Country.Sweden},
+            new Admin {Username = "2", Password = "2", Country = Country.Sweden},
             new User {Username = "1", Password = "1", Country = Country.Sweden, Travels =new()
                 {
                 new Vacation("Venice", Country.Italy, 2, true),

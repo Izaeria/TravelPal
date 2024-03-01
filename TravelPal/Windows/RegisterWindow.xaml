@@ -20,13 +20,13 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="120"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -44,10 +44,10 @@
         <PasswordBox x:Name="txtConfirmPassword" Grid.Column="2" Grid.Row="7" Width="150"/>
 
         <TextBlock Grid.Column="2" Grid.Row="8" FontSize ="18" Text="Country of Origin" Margin="0,0,0,5" HorizontalAlignment="Center" />
-        <ComboBox Name="cmbCountry" Grid.Column="2" Grid.Row="9" Height="30"  />
+        <ComboBox Name="cmbCountry" Grid.Column="2" Grid.Row="9" Height="20"  />
 
-        <Button x:Name="RegisterBtn" Content="Register" Click="RegisterBtn_Click" Grid.Column="4" Grid.Row="9" Width="120" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="MintCream"/>
-
+        <Button x:Name="RegisterBtn" Content="Register" Click="RegisterBtn_Click" Grid.Column="2" Grid.Row="10" Width="100" Margin="5" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="MintCream"/>
+        <Button x:Name="goBackBtn" Content="Go back to previous page" Click="goBackBtn_Click" Grid.Column="3" Grid.Row="10" FontSize="10" Margin ="5" Width="150" HorizontalAlignment="center" Background="#7B68EE" BorderBrush="#7B68EE" Foreground="#F5FFFA"/>
 
     </Grid>
 </Window>
