@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,13 +40,13 @@ namespace TravelPal.Windows
 
         private void DisplayTravels()
         {
-            if(UserManager.SignedInUser.GetType() == typeof(User)) 
+            if (UserManager.SignedInUser.GetType() == typeof(User))
             {
-             //
-            
-            User user = (User)UserManager.SignedInUser; 
-          
-                foreach(Travel travel in user.Travels)
+                //
+
+                User user = (User)UserManager.SignedInUser;
+
+                foreach (Travel travel in user.Travels)
                 {
                     ListViewItem item = new();
                     item.Tag = travel;
@@ -55,9 +56,9 @@ namespace TravelPal.Windows
             }
             else
             {
-                foreach(IUser user in UserManager.Users)
+                foreach (IUser user in UserManager.Users)
                 {
-                    if(user.GetType() == typeof(User))
+                    if (user.GetType() == typeof(User))
                     {
                         User user1 = (User)user;
                         foreach (Travel travel in user1.Travels)
@@ -71,8 +72,8 @@ namespace TravelPal.Windows
                     }
                 }
             }
-            
-            
+
+
         }
 
 
@@ -91,31 +92,101 @@ namespace TravelPal.Windows
             travelDetailsWindow.Show();
             Close();
         }
-
-        //TODO: Actually remove a travel
-        private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
+        private void removeTravelsBtn_Click(object sender, RoutedEventArgs e)
         {
-            
- //           if ()
+            if (lstTravels.SelectedItem != null)
+            {
+                if (UserManager.SignedInUser is User)
+                {
 
- //           else
- //           {
- //MessageBox.Show("Your travel location has been removed!");
- //           }
-                
+                    Travel selectedTravel = (Travel)((ListBoxItem)lstTravels.SelectedItem).Tag;
+                    lstTravels.Items.Remove(lstTravels.SelectedItem);
+
+                    User thisUser = (User)UserManager.SignedInUser;
+                    thisUser.Travels.Remove(selectedTravel);
+
+
+                }
+                else
+                {
+                    foreach (IUser users in UserManager.Users)
+                    {
+
+                        if (UserManager.SignedInUser is Admin)
+                        {
+                            User currentUser = (User)users;
+                            Travel selectedTravel = (Travel)lstTravels.SelectedItem;
+
+                            if (currentUser.Travels.Contains(selectedTravel))
+                            {
+                                // Remove the travel from the user's travels list
+                                currentUser.Travels.Remove(selectedTravel);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("You must select an existing travel");
+            }
+
+
         }
 
-        private void signOutBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
-        }
+            //TODO: Actually remove a travel
+            //private void removetravelsBtn_Click(object sender, RoutedEventArgs e)
+            //{
 
-        //TODO Write about how the app works
-        private void aboutBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("A small little company for easy travels");
-        }
+            //    if (selectedTravel == null)
+            //    {
+
+            //    }
+
+            //    else
+            //            {
+            //                MessageBox.Show("Your travel location has been removed!");
+            //            }
+
+            //}
+
+            //private Travel selectedTravel;
+
+
+            //// Metod för att kunna välja en travel
+            //public Travel SelectedTravel
+            //{
+            //    get { return selectedTravel; }
+            //    set
+            //    {
+            //        selectedTravel = value;
+            //        OnPropertyChanged(nameof(SelectedTravel)); 
+            //    }
+            //}
+
+
+            //public event PropertyChangedEventHandler PropertyChanged;
+
+            //protected void OnPropertyChanged(string propertyName)
+            //{
+            //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //}
+
+
+            private void signOutBtn_Click(object sender, RoutedEventArgs e)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+
+            //TODO Write about how the app works
+            private void aboutBtn_Click(object sender, RoutedEventArgs e)
+            {
+                MessageBox.Show("A small little company for easy travels");
+            }
+        
     }
 }

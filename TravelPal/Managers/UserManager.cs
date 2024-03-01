@@ -12,8 +12,8 @@ namespace TravelPal.Managers
     {
         public static List<IUser> Users { get; set; } = new()
         {
-            new Admin {Username = "admin", Password = "password"},
-            new User {Username = "1", Password = "1", Travels =new()
+            new Admin {Username = "admin", Password = "password", Country = Country.Sweden},
+            new User {Username = "1", Password = "1", Country = Country.Sweden, Travels =new()
                 {
                 new Vacation("Venice", Country.Italy, 2, true),
                 new WorkTrip("Toronto", Country.Canada, 4, "Business")
@@ -23,6 +23,7 @@ namespace TravelPal.Managers
 
 
         public static IUser SignedInUser { get; set; }
+
 
         public static bool SignInUser(string username, string password)
         {
