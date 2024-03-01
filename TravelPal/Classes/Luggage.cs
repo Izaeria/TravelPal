@@ -26,7 +26,24 @@ namespace TravelPal.Classes
 
             public string GetInfo()
             {
-                return Name + ", required:" + Required;
+                return Name + ", required: " + Required;
+            }
+        }
+
+        public class Items : Luggage
+        {
+            public string Name { get; set; }
+            public int Quantity { get; set; }
+
+            public Items(string name, int quantity)
+            {
+                Name = name; 
+                Quantity = quantity;
+            }
+
+            public string GetInfo()
+            {
+                return Name;
             }
         }
     }

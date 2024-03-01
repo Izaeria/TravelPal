@@ -63,6 +63,7 @@ namespace TravelPal.Windows
                         txtbAllInclusive.Visibility = Visibility.Visible;
                         txtAllInclusive.Text = "No";
                     }
+                    
                 }
             }
             if (travel.GetType() == typeof(WorkTrip))

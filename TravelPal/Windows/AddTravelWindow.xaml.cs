@@ -121,7 +121,24 @@ namespace TravelPal.Windows
 
                     ClearLuggageFields();
                 }
-            }
+                else 
+                {
+                        string name = txtAddLuggage.Text;
+                    int quantity = int.Parse(cmbQuantity.SelectedItem.ToString());
+
+                         Items items = new(name, quantity);
+
+                        ListViewItem listViewItem = new();
+                        listViewItem.Tag = items;
+                        listViewItem.Content = items.GetInfo();
+                        lstLuggage.Items.Add(listViewItem);
+
+                        ClearLuggageFields();
+
+
+
+                    }
+                }
         }
         private void AddTravelDocument(string name, bool isRequired)
         {
