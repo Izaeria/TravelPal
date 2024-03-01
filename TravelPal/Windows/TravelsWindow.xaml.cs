@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,10 +92,15 @@ namespace TravelPal.Windows
         private void checkDetailsBtn_Click(object sender, RoutedEventArgs e)
         {
             if (lstTravels.SelectedItem != null)
-            { 
-                TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
-            travelDetailsWindow.Show();
-            Close();
+            {
+
+                ListViewItem selectedItem = new ListViewItem();
+                selectedItem = (ListViewItem)lstTravels.SelectedItem;
+                Travel selectedTravel = (Travel)selectedItem.Tag;
+
+                TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow(selectedTravel, user);
+                travelDetailsWindow.Show();
+                Close();
             }
             else
             {

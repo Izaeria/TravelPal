@@ -28,12 +28,16 @@ namespace TravelPal.Windows
     {  
         
         private Travel travel;
+       
         private IUser user;
 
+        
 
 
-        public TravelDetailsWindow()
+        public TravelDetailsWindow(Travel travel, IUser user)
         {
+            this.user = user;
+           this.travel = travel;
             InitializeComponent();
             LoadAllTravelInfo();
         }
