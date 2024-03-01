@@ -13,13 +13,13 @@ namespace TravelPal.Classes
     {
         public string? Destination { get; set; }
         public Country Country { get; set; }
-        public int Travellers { get; set; }
+        public int Travelers { get; set; }
 
-       public Travel(string destination, Country country, int travellers)
+       public Travel(string destination, Country country, int travelers)
         {
             Destination = destination;
             Country = country;
-            Travellers = travellers;
+            Travelers = travelers;
         }
         public virtual string GetInfo()
         {

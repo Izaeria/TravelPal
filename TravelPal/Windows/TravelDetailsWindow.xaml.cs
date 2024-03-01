@@ -31,6 +31,7 @@ namespace TravelPal.Windows
         private IUser user;
 
 
+
         public TravelDetailsWindow()
         {
             InitializeComponent();
@@ -40,20 +41,22 @@ namespace TravelPal.Windows
 
         public void LoadAllTravelInfo()
         {
-            if (travel.GetType() == typeof(Vacation))
             {
-                Vacation vacation = (Vacation)travel;
-                txtDestination.Text = vacation.Destination;
-                txtCountry.Text = vacation.Country.ToString();
-               txtTravelers.Text = vacation.Travelers.ToString();
+                if (travel.GetType() == typeof(Vacation))
+                {
+                    Vacation vacation = (Vacation)travel;
+                    txtDestination.Text = vacation.Destination;
+                    txtCountry.Text = vacation.Country.ToString();
+                    txtTravelers.Text = vacation.Travelers.ToString(); 
 
-                if (vacation.AllInclusive)
-                {
-                    txtAllInclusive.Text = "Yes";
-                }
-                else
-                {
-                    txtAllInclusive.Text = "No";
+                    if (vacation.AllInclusive)
+                    {
+                        txtAllInclusive.Text = "Yes";
+                    }
+                    else
+                    {
+                        txtAllInclusive.Text = "No";
+                    }
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace TravelPal.Classes
         {
             public string MeetingDetails { get; set; }
 
-            public WorkTrip(string destination, Country country, int travellers, string meetingDetails) : base(destination, country, travellers)
+            public WorkTrip(string destination, Country country, int travelers, string meetingDetails) : base(destination, country, travelers)
             {
                 MeetingDetails = meetingDetails;
             }
