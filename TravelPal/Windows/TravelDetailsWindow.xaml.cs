@@ -38,12 +38,16 @@ namespace TravelPal.Windows
             this.travel = travel;
             InitializeComponent();
             LoadAllTravelInfo();
+            UsernameLabel();
+        }
+        private void UsernameLabel()
+        {
+            lblUsername.Content = "Hello " + UserManager.SignedInUser.Username + "!";
 
         }
-      
+
         public void LoadAllTravelInfo()
         {
-            
             {
                 if (travel.GetType() == typeof(Vacation))
                 {

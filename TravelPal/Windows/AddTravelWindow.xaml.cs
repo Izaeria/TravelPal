@@ -30,6 +30,12 @@ namespace TravelPal.Windows
         {
             InitializeComponent();
             LoadComboBoxes();
+            UsernameLabel();
+        }
+        private void UsernameLabel()
+        {
+            lblUsername.Content = "Hello " + UserManager.SignedInUser.Username + "!";
+
         }
 
         private void LoadComboBoxes()
@@ -87,8 +93,6 @@ namespace TravelPal.Windows
                         string destination = txtCity.Text;
                         int travelers = cmbTravelers.SelectedIndex + 1;
                         string meetingDetails = txtMeetingDetails.Text;
-
-
 
                         WorkTrip newWorktrip = new WorkTrip(destination, selectedCountry, travelers, meetingDetails);
 
