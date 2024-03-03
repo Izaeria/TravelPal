@@ -136,7 +136,6 @@ namespace TravelPal.Windows
 
                     string name = txtAddLuggage.Text;
                     bool isRequired;
-                    string required;
                     if (xbRequired.IsChecked == true)
                     {
                         isRequired = true;

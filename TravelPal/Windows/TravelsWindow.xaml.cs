@@ -173,7 +173,7 @@ namespace TravelPal.Windows
             //TODO Write about how the app works
             private void aboutBtn_Click(object sender, RoutedEventArgs e)
             {
-                MessageBox.Show("A small little company for easy travels");
+                MessageBox.Show("TravelPal is an app used for adding, removing and viewing trips!");
             }
         
     }
